@@ -61,7 +61,7 @@ def webhook():
                 reply_message(reply_token, gpt_reply)
     except Exception as e:
         print(f"Error: {e}")
-    return "OK"
+    return "OK",200
 
 # 啟動 Flask
 if __name__ == "__main__":
