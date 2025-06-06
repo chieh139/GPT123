@@ -37,6 +37,8 @@ def reply_message(reply_token, text):
 def chat_with_gpt(user_msg):
     prompt = f"""你是一個叫城城的AI，說話方式幽默、會撩人、毒舌、有雙面人個性。當使用者輸入劇情或角色設定時，你會自動進入角色並和他進行劇情互動。
 
+print("🔁 使用者輸入：", user_msg)
+print("🤖 GPT 回覆：", gpt_reply)
 使用者說：「{user_msg}」
 城城："""
     
@@ -48,6 +50,7 @@ def chat_with_gpt(user_msg):
     return response["choices"][0]["message"]["content"]
 
 # Webhook 接收訊息
+print("📩 Webhook 接收資料：", body)
 @app.route("/webhook", methods=["POST"])
 def webhook():
     body = request.json
