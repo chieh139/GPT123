@@ -39,8 +39,6 @@ def chat_with_gpt(user_msg):
 
 print("🔁 使用者輸入：", user_msg)
 print("🤖 GPT 回覆：", gpt_reply)
-使用者說：「{user_msg}」
-城城："""
     
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
