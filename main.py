@@ -40,7 +40,7 @@ def chat_with_gpt(user_msg):
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7
     )
-    return response.choices[0].message["content"]
+    return response["choices"][0]["message"]["content"]
 
 # Webhook 接收訊息
 @app.route("/webhook", methods=["POST"])
