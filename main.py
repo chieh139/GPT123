@@ -26,7 +26,12 @@ def reply_message(reply_token, text):
             "text": text
         }]
     }
-    requests.post("https://api.line.me/v2/bot/message/reply", headers=headers, json=body)
+     # 發送回覆，並印出狀態以利除錯
+    response = requests.post("https://api.line.me/v2/bot/message/reply",
+                             headers=headers,
+                             json=body)
+    print("Line 回覆狀態碼:", response.status_code)
+    print("Line 回覆內容:", response.text)
 
 # ChatGPT 回覆邏輯（城城上身）
 def chat_with_gpt(user_msg):
